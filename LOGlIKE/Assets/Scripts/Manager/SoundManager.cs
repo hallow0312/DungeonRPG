@@ -13,6 +13,15 @@ public class SoundManager :SingleTon<SoundManager>
     {
         effectSource.PlayOneShot(clip);
     }
+    protected override void Awake()
+    {
+        base.Awake();
+        MasterVolume = 0f;
+        BGMVolume = 0f;
+        EffectVolume = 0f;
+
+    }
+
 
     public void OnEnable()
     {
@@ -28,5 +37,17 @@ public class SoundManager :SingleTon<SoundManager>
     public void OnDisable()
     {
         SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+    public float MasterVolume
+    {
+        get;set;
+    }
+    public float BGMVolume
+    {
+        get;set;
+    }
+    public float EffectVolume
+    {
+        get; set;
     }
 }

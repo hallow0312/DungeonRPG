@@ -117,7 +117,7 @@ GameObject:
   - component: {fileID: 5969902467941240495}
   - component: {fileID: 4293328548740763450}
   m_Layer: 0
-  m_Name: Image
+  m_Name: PlayerImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -130,7 +130,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 303486681908038127}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -451,6 +451,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   delayTime: 0.44
   weaponManager: {fileID: 5847975867430326969}
+  weaponSound: {fileID: 8300000, guid: e4074dbde6448c245af71ab72aeb82d7, type: 3}
 --- !u!114 &356213304095156216
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1157,7 +1158,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 200, y: -50}
+  m_AnchoredPosition: {x: 180, y: -50}
   m_SizeDelta: {x: 500, y: 100}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &957133234377682592
@@ -1442,7 +1443,7 @@ Transform:
   m_GameObject: {fileID: 7760277152478611959}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.9556417, y: 1.9834099, z: -6}
+  m_LocalPosition: {x: -14.955642, y: 2.98341, z: -6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1853,7 +1854,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 200, y: -125}
+  m_AnchoredPosition: {x: 180, y: -125}
   m_SizeDelta: {x: 490, y: 30}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &2364298736045615281

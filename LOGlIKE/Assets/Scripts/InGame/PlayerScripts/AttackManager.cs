@@ -5,7 +5,7 @@ public class PlayerAttack : MonoBehaviour
 {
     [SerializeField] float delayTime = 0.44f;
     [SerializeField] WeaponManager weaponManager;
-    
+    [SerializeField] AudioClip weaponSound;
     private PlayerAnimationController animeController;
     private bool isAttacking;
    public float PlayerPower
@@ -23,6 +23,7 @@ public class PlayerAttack : MonoBehaviour
         if (Input.GetKey(KeyCode.X) && !isAttacking)
         {
             isAttacking = true;
+            
             StartCoroutine(NormalAttack());
         }
         
@@ -33,13 +34,13 @@ public class PlayerAttack : MonoBehaviour
      
         animeController.BoolAttackAnimation(true);
         weaponManager.AttackState = true;
-      
         yield return CoroutineCache.waitForSeconds(delayTime);
+        SoundManager.Instance.Sound(weaponSound);
         animeController.BoolAttackAnimation(false);
 
         weaponManager.AttackState = false;
         isAttacking = false;
     }
-   
+    
     
 }

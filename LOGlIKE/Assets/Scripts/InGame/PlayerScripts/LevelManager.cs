@@ -8,7 +8,7 @@ public class LevelManager : MonoBehaviour
    [SerializeField] PlayerAttack playerAttack;
    [SerializeField] EXPManager expManager;
    [SerializeField] TMP_Text levelText;
-
+   [SerializeField] AudioClip audioClip;
    [SerializeField] private int level;
 
     public int Level
@@ -26,6 +26,7 @@ public class LevelManager : MonoBehaviour
         Level++;
         levelText.text = "LV " + level;
         PlayerManager.Instance.Level = Level;
+        SoundManager.Instance.Sound(audioClip);
         hpmanager.MaxHP += 5.0f;
         playerAttack.PlayerPower += 2.5f;
         

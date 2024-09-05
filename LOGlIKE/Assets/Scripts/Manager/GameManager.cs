@@ -1,24 +1,47 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+
 
 public class GameManager : SingleTon<GameManager>
 {
-
-
-
-    void Resume()
+    GameObject SettingBoard;
+    bool isOpen;
+    private void Start()
     {
+        isOpen = false;
+    }
+    public bool IsOpen
+    { 
+        set { isOpen = value; }
+    }
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape)) 
+        {
+            if (!isOpen)
+            {
+                isOpen = true;
+                CreateBoard();
+            }
+            else if(isOpen)
+            {
+                isOpen = false;
+                DestroyBoard();
+            }
+        }
+        
+       
+    }
+    public void CreateBoard()
+    {
+        SettingBoard = Instantiate(Resources.Load<GameObject>("SettingBoard"));
 
     }
-    void GoToLobby()
+    public  void DestroyBoard()
     {
-
-
+       Destroy(SettingBoard);
     }
-    
-    void SetVolume()
-    {
 
-    }
 }

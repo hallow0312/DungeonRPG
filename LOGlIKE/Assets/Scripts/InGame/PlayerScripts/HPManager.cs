@@ -10,7 +10,7 @@ public class HPManager : MonoBehaviour
     [SerializeField] private Slider slider;
     [SerializeField] float defaultHP=100.0f;
     [SerializeField] SpriteRenderer[] render;
-  
+    [SerializeField] AudioClip audioclip;
     public float MaxHP
     {
         get { return maxHP; }
@@ -53,7 +53,7 @@ public class HPManager : MonoBehaviour
     }
 
     public void Damaged(float damage)
-    {
+    {  
         gameObject.tag = "NoEnemy";
        
         for(int i=0; i < render.Length; i++)
@@ -61,6 +61,7 @@ public class HPManager : MonoBehaviour
             render[i].color = new Color(0.8f, 0.8f, 0.8f, 0.6f);
         }
         CurrentHP -= damage;
+        SoundManager.Instance.Sound(audioclip);
         if (currentHP < 0)
         {
             currentHP = 0; // HP는 0 이하로 내려가지 않도록

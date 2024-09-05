@@ -11,16 +11,17 @@ public struct MonsterData
     public float Exp;
 
 }
-public abstract class Monster : MonoBehaviour
+public abstract class Monster : MonoBehaviour,ISubject
 {
     public MonsterData monsterdata;
     private MonsterHpManager monsterhp;
-   
+    private MonsterController monsterController;
+    private readonly List<IObserver> observers=new List<IObserver>();
     public abstract void InitSetting();
     public virtual void Start()
     { 
         InitSetting();
-        
+        monsterController=GetComponent<MonsterController>();
         monsterhp=GetComponent<MonsterHpManager>();
       
         if(monsterhp != null)
@@ -38,9 +39,13 @@ public abstract class Monster : MonoBehaviour
     public virtual void Die()
     {
         var DestroyCollider = this.GetComponent<Collider2D>();
+        if(monsterController!=null)
+        {
+            monsterController.EndCoroutine();
+        }
         Destroy(DestroyCollider);
         GiveExp();
-
+        NotifyObserver();
         Destroy(gameObject, 0.5f);
     }
   
@@ -55,6 +60,21 @@ public abstract class Monster : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             collision.gameObject.GetComponent<HPManager>().Damaged(monsterdata.attackDamage);
+        }
+    }
+    public void RegisterObserver(IObserver observer)
+    {
+        this.observers.Add(observer);
+    }
+    public void RemoveObserver(IObserver observer)
+    {
+        this.observers.Remove(observer);
+    }
+    public void NotifyObserver()
+    {
+        foreach(var observer in observers)
+        {
+            observer.UpdateObserver();
         }
     }
 

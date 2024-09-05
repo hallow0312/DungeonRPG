@@ -6,23 +6,24 @@ using UnityEngine;
 public class MonsterController: MonoBehaviour
 {
     [SerializeField] Animator animator;
-    [SerializeField] float movePower = 2.0f;
+    [SerializeField] float movePower;
+    [SerializeField] Vector3 scale;
     private int moveState;
     private float direction;
     bool isTracing;
     private GameObject traceTarget;
-
- 
     private void Start()
     {
         animator = GetComponent<Animator>();
         StartCoroutine(ChangeState());
-       
+        scale= transform.localScale;
     }
     private void FixedUpdate()
     {
         Moving(); 
     }
+
+ 
     IEnumerator ChangeState()
     {
         moveState = Random.Range(-1,2); // idle //left//right
@@ -50,33 +51,37 @@ public class MonsterController: MonoBehaviour
             return;
         }
         Vector3 moveVelocity = Vector3.zero;
-     
+        
 
         if (isTracing)
         {
-          Vector3 playerPos=traceTarget.transform.position;
+           Vector3 playerPos=traceTarget.transform.position;
+            
             if (playerPos.x < transform.position.x)
             {
                 moveVelocity = Vector3.left;
-                transform.localScale = new Vector3(-1, 1, 1);
+                transform.localScale = new Vector3(-scale.x,scale.y,scale.z);
             }
             else if(playerPos.x>transform.position.x)
             {
                 moveVelocity = Vector3.right;
-                transform.localScale = new Vector3(1, 1, 1);
+                transform.localScale = new Vector3(scale.x,scale.y,scale.z);
+                
             }
+
         }
         else
         {
             if (moveState == -1) //left
             {
+                transform.localScale = new Vector3(-scale.x, scale.y, scale.z);
                 moveVelocity = Vector3.left;
-                transform.localScale = new Vector3(-1, 1, 1);
             }
             else if (moveState == 1)
             {
                 moveVelocity = Vector3.right;
-                transform.localScale = new Vector3(1, 1, 1);
+                transform.localScale = new Vector3(scale.x,scale.y,scale.z);
+
             }
         }
         direction = moveVelocity.x * movePower * Time.deltaTime;
@@ -111,6 +116,12 @@ public class MonsterController: MonoBehaviour
         traceTarget = null;
         isTracing = false;
         StartCoroutine(ChangeState());
+    }
+    public void EndCoroutine()
+    {
+        if (isTracing) { return; }
+        StopCoroutine(ChangeState());
+       
     }
     
 }
