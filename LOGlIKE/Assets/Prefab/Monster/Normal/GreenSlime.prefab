@@ -115,9 +115,9 @@ GameObject:
   - component: {fileID: 7396349545611050801}
   - component: {fileID: 5730820286084510684}
   - component: {fileID: 1271699842293949558}
-  - component: {fileID: 6359862165740240537}
   - component: {fileID: 2349544525395587088}
   - component: {fileID: 1933010768932295285}
+  - component: {fileID: -3253784566105495736}
   m_Layer: 0
   m_Name: GreenSlime
   m_TagString: Monster
@@ -135,7 +135,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 72.2941, y: 11.5467, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: -1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 987996601876274965}
@@ -288,21 +288,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &6359862165740240537
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8726912142884043804}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26ee1d95d9f0ba3488b4b4ae01d55a77, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Max_hp: 100
-  current_hp: 100
-  hpBar: {fileID: 8565754181200225655}
 --- !u!114 &2349544525395587088
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -317,6 +302,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
   movePower: 1.5
+  scale: {x: 0, y: 0, z: 0}
 --- !u!114 &1933010768932295285
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -329,6 +315,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45cbc738ff5a37147a20c31ed2455006, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-3253784566105495736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8726912142884043804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc48efc317eacfa4ea148fc325943fe2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Max_hp: 0
+  current_hp: 0
+  hpBar: {fileID: 8565754181200225655}
 --- !u!1 &9206881276049271845
 GameObject:
   m_ObjectHideFlags: 0

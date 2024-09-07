@@ -155,11 +155,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 5440956597572283970}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26ee1d95d9f0ba3488b4b4ae01d55a77, type: 3}
+  m_Script: {fileID: 11500000, guid: bc48efc317eacfa4ea148fc325943fe2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Max_hp: 100
-  current_hp: 100
+  Max_hp: 0
+  current_hp: 0
   hpBar: {fileID: 1336449051290149159}
 --- !u!1001 &4846054566774449994
 PrefabInstance:

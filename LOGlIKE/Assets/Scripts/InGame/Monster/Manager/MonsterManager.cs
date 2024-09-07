@@ -42,11 +42,12 @@ public abstract class Monster : MonoBehaviour,ISubject
         if(monsterController!=null)
         {
             monsterController.EndCoroutine();
+            monsterController.Die();
         }
         Destroy(DestroyCollider);
         GiveExp();
         NotifyObserver();
-        Destroy(gameObject, 0.5f);
+        Destroy(gameObject, 1.0f);
     }
   
     public virtual void Hurt(float damage)

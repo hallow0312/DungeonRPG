@@ -6,7 +6,7 @@ public class DefaultMonster : Monster // 움직이지 않는 허수아비 기준으로 default
 {
     public override void InitSetting()
     {
-        monsterdata.attackDamage = 5.0f;
+        monsterdata.attackDamage = 1.0f;
         monsterdata.Exp = 5.0f;
         monsterdata.HP = 100.0f;
     }

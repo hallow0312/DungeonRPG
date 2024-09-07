@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class MonsterHpManager : MonoBehaviour
+public abstract class MonsterHpManager : MonoBehaviour
 {
-    [SerializeField] private float Max_hp;
-    [SerializeField] private float current_hp;
-    [SerializeField] Image hpBar;
+    [SerializeField] protected float Max_hp;
+    [SerializeField] protected float current_hp;
 
-    private Monster monster;
+
+    protected Monster monster;
    
     public void SetHP(float hp)
     {
@@ -24,31 +24,24 @@ public class MonsterHpManager : MonoBehaviour
       
     }
 
-    public void InitialHpBar()
-    {   if (hpBar == null) return;
-        hpBar.transform.localScale = Vector3.one;
-    }
+    public abstract void InitialHpBar();
 
     
-    public void Update_Bar()
+    public virtual void Update_Bar()
     {
         if (Max_hp <= 0)
         {
             Debug.Log("Error");
             return;
         }
-        hpBar.transform.localScale = new Vector3(current_hp / Max_hp, 1, 1);
+      
     }
 
-    public void Damaged(float damage)
+    public virtual void Damaged(float damage)
     {
         current_hp -= damage;
         Update_Bar();
-        if (current_hp<0)
-        {
-            monster.Die();
-
-        }
+        
     }
    
 

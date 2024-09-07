@@ -8,11 +8,16 @@ public class MonsterCount : MonoBehaviour,IObserver
     [SerializeField] int RemainMonster;
     [SerializeField] int MaxMonster;
     [SerializeField] TMP_Text CountText;
-
+    [SerializeField] GameObject bossSpawner;
     public void UpdateObserver()
     {
         RemainMonster--;
         CountText.text = RemainMonster + "/" + MaxMonster;
+       
+        if(RemainMonster==0)
+        {
+            bossSpawner.SetActive(true);
+        }
     }
     public void AddMonster(Monster monster)
     {
@@ -23,6 +28,7 @@ public class MonsterCount : MonoBehaviour,IObserver
     }
     private void Start()
     {
+      
         RemainMonster = 0; MaxMonster = 0;
         Monster[]monsters=FindObjectsOfType<Monster>();
         foreach(var monster in monsters)
@@ -30,6 +36,7 @@ public class MonsterCount : MonoBehaviour,IObserver
             AddMonster(monster);
         }
         CountText.text = RemainMonster + "/" + MaxMonster;
+        bossSpawner.SetActive(false);
     }
 
 }

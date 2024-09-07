@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7799475781663169369}
   - component: {fileID: 1395936388667727211}
   - component: {fileID: 6431396464528007200}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PlayerUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -116,7 +116,7 @@ GameObject:
   - component: {fileID: 2550787478336763870}
   - component: {fileID: 5969902467941240495}
   - component: {fileID: 4293328548740763450}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PlayerImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -191,7 +191,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8461927614873934067}
   - component: {fileID: 6915112483629627948}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: MiniMapCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -287,7 +287,7 @@ GameObject:
   - component: {fileID: 1058328295846889096}
   - component: {fileID: 1887738703084781792}
   - component: {fileID: 4970900979182838684}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Character
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -490,6 +490,7 @@ MonoBehaviour:
   - {fileID: 4548684644824546441}
   - {fileID: 4259390229607820934}
   - {fileID: 4604556182233307031}
+  audioclip: {fileID: 0}
 --- !u!114 &1887738703084781792
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -520,6 +521,7 @@ MonoBehaviour:
   playerAttack: {fileID: 0}
   expManager: {fileID: 0}
   levelText: {fileID: 3206601086162219156}
+  audioClip: {fileID: 0}
   level: 0
 --- !u!1 &2885617183119261116
 GameObject:
@@ -533,7 +535,7 @@ GameObject:
   - component: {fileID: 7807427618873419239}
   - component: {fileID: 3657952044437409782}
   - component: {fileID: 5847975867430326969}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Weapon-Sword
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -679,7 +681,7 @@ GameObject:
   - component: {fileID: 3621122399055146538}
   - component: {fileID: 934365477998508427}
   - component: {fileID: 1365944434388723315}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -753,7 +755,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8197756908341101981}
   - component: {fileID: 4548684644824546441}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -841,7 +843,7 @@ GameObject:
   - component: {fileID: 2515693775981016675}
   - component: {fileID: 7672610054138061739}
   - component: {fileID: 480500185849453447}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: MiniMapCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -940,7 +942,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9223305770092272266}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -978,7 +980,7 @@ GameObject:
   - component: {fileID: 8057275519899997179}
   - component: {fileID: 9192352876671246410}
   - component: {fileID: 2214640953928367313}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: MiniMap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1049,7 +1051,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4762179468104940584}
   - component: {fileID: 457257446246945536}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: PlayerIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1133,7 +1135,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8591680223409089235}
   - component: {fileID: 957133234377682592}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: HPBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1222,7 +1224,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3020182283661018090}
   - component: {fileID: 5630336033627464174}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Leg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1306,7 +1308,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6502422663198230861}
   - component: {fileID: 4259390229607820934}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Leg (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1389,7 +1391,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1290996450408393950}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Handle Slide Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1427,7 +1429,7 @@ GameObject:
   - component: {fileID: 3937857727843970415}
   - component: {fileID: 5042642086820495451}
   - component: {fileID: 5538062298224769904}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -1553,7 +1555,7 @@ GameObject:
   - component: {fileID: 1143690509343495864}
   - component: {fileID: 3697676079992965191}
   - component: {fileID: 5510857696757867137}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BlockClick
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1626,7 +1628,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7526226784314140556}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sliding Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1661,7 +1663,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6607275170160578569}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1695,7 +1697,7 @@ GameObject:
   - component: {fileID: 3094278503642401500}
   - component: {fileID: 1298159749564223671}
   - component: {fileID: 3206601086162219156}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LevelText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1830,7 +1832,7 @@ GameObject:
   - component: {fileID: 2364298736045615281}
   - component: {fileID: 5597989540022455473}
   - component: {fileID: 1738248704231882414}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: EXPBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1952,9 +1954,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8197756908341101981}
     m_Modifications:
+    - target: {fileID: 553848720529367536, guid: ac297761c1bfba141a38226113340c48, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4871095636498825959, guid: ac297761c1bfba141a38226113340c48, type: 3}
       propertyPath: m_Name
       value: Head
+      objectReference: {fileID: 0}
+    - target: {fileID: 4871095636498825959, guid: ac297761c1bfba141a38226113340c48, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6127818125051112518, guid: ac297761c1bfba141a38226113340c48, type: 3}
       propertyPath: m_LocalPosition.x

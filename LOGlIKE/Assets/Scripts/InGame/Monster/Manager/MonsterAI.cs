@@ -1,28 +1,31 @@
- using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 
-public class MonsterController: MonoBehaviour
+
+public class MonsterController: MonoBehaviour //일반몬스터 
 {
-    [SerializeField] Animator animator;
-    [SerializeField] float movePower;
-    [SerializeField] Vector3 scale;
-    private int moveState;
-    private float direction;
-    bool isTracing;
-    private GameObject traceTarget;
-    private void Start()
+    [SerializeField] protected Animator animator;
+    [SerializeField] protected float movePower;
+    [SerializeField] protected Vector3 scale;
+    protected int moveState;
+    protected float direction;
+    protected bool isTracing;
+    protected GameObject traceTarget;
+    
+    protected virtual void Start()
     {
         animator = GetComponent<Animator>();
         StartCoroutine(ChangeState());
         scale= transform.localScale;
     }
-    private void FixedUpdate()
+    protected virtual void FixedUpdate()
     {
-        Moving(); 
-    }
 
+        Moving();
+    }
+    
  
     IEnumerator ChangeState()
     {
@@ -51,22 +54,21 @@ public class MonsterController: MonoBehaviour
             return;
         }
         Vector3 moveVelocity = Vector3.zero;
-        
 
         if (isTracing)
         {
-           Vector3 playerPos=traceTarget.transform.position;
-            
+            Vector3 playerPos = traceTarget.transform.position;
+
             if (playerPos.x < transform.position.x)
             {
                 moveVelocity = Vector3.left;
-                transform.localScale = new Vector3(-scale.x,scale.y,scale.z);
+                transform.localScale = new Vector3(-scale.x, scale.y, scale.z);
             }
-            else if(playerPos.x>transform.position.x)
+            else if (playerPos.x > transform.position.x)
             {
                 moveVelocity = Vector3.right;
-                transform.localScale = new Vector3(scale.x,scale.y,scale.z);
-                
+                transform.localScale = new Vector3(scale.x, scale.y, scale.z);
+
             }
 
         }
@@ -80,10 +82,11 @@ public class MonsterController: MonoBehaviour
             else if (moveState == 1)
             {
                 moveVelocity = Vector3.right;
-                transform.localScale = new Vector3(scale.x,scale.y,scale.z);
+                transform.localScale = new Vector3(scale.x, scale.y, scale.z);
 
             }
         }
+        
         direction = moveVelocity.x * movePower * Time.deltaTime;
         Vector2 frontVec = transform.position + new Vector3(direction, 0, 0);
         RaycastHit2D rayHit = Physics2D.Raycast(frontVec, Vector2.down, 1, LayerMask.GetMask("Ground"));
@@ -95,11 +98,15 @@ public class MonsterController: MonoBehaviour
         Debug.DrawRay(frontVec, Vector2.down, new Color(0, 1, 0));
         transform.position += new Vector3(direction, 0,0);
     }
+    
     public void Hurt()
     {
         animator.SetTrigger("isHurt");
     }
-
+    public  void  Die()
+    {
+        animator.SetTrigger("isDie");
+    }
    
     public void StartTrace(GameObject target)
     {
