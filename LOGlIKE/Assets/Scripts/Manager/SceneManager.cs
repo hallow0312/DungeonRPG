@@ -25,9 +25,9 @@ public class SceneController : SingleTon<SceneController>
         {
             color.a -= Time.deltaTime;
             loadImage.color = color;
-            loadImage.gameObject.SetActive(false);
             yield return null;
         }
+        loadImage.gameObject.SetActive(false);
 
     }
    
@@ -36,11 +36,12 @@ public class SceneController : SingleTon<SceneController>
         SceneImage.gameObject.SetActive(true);
         slider.value = 0;
         SceneText.text = text[Random.Range(0, text.Length)];
-        
+        float random;
         while(slider.value<1.0f)
         {
             yield return CoroutineCache.waitForSeconds(1.0f);
-            slider.value += 0.2f;
+            random = Random.Range(0.2f, 0.6f);
+            slider.value += random;
         }
         yield return null;
     }

@@ -21,17 +21,17 @@ public class WeaponManager : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
         CalculateTotalDamage();
         if (collision.gameObject.CompareTag("Monster")&&isAttack)
         {
-          
+            isAttack = false;
             collision.gameObject.GetComponent<Monster>().Hurt(totalDamage);
         }
     }
     void CalculateTotalDamage()
     {
-        totalDamage = WeaponDamage * 2 + playerAttack.PlayerPower * 1.2f;
+        totalDamage = WeaponDamage *1.4f + playerAttack.PlayerPower * 1.2f;
     }
 }

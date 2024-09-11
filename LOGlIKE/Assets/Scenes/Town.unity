@@ -8208,9 +8208,37 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1772627041}
     m_Modifications:
+    - target: {fileID: 1362966998117850747, guid: 97234d2e2a77fb247b5f86be4e93f7d3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2721686589876742618, guid: 97234d2e2a77fb247b5f86be4e93f7d3, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2721686589876742618, guid: 97234d2e2a77fb247b5f86be4e93f7d3, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2721686589876742618, guid: 97234d2e2a77fb247b5f86be4e93f7d3, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2833980960334057734, guid: 97234d2e2a77fb247b5f86be4e93f7d3, type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 4616695757173822879, guid: 97234d2e2a77fb247b5f86be4e93f7d3, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4616695757173822879, guid: 97234d2e2a77fb247b5f86be4e93f7d3, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4616695757173822879, guid: 97234d2e2a77fb247b5f86be4e93f7d3, type: 3}
+      propertyPath: m_Color.r
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6589532599533398336, guid: 97234d2e2a77fb247b5f86be4e93f7d3, type: 3}
       propertyPath: m_Pivot.x
@@ -8290,6 +8318,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6589532599533398336, guid: 97234d2e2a77fb247b5f86be4e93f7d3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9096124537098711135, guid: 97234d2e2a77fb247b5f86be4e93f7d3, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

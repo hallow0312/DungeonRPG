@@ -1,32 +1,29 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Threading;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class BossMonsterHP : MonsterHpManager
+public class NormalMonsterHP : MonsterHpManager
 {
-    [SerializeField] Slider hpBar;
-    
+    [SerializeField] Image hpBar;
 
     public override void InitialHpBar()
     {
-        hpBar.maxValue = Max_hp;
-        hpBar.minValue = 0;
-        hpBar.value = Max_hp;
+      hpBar.transform.localScale= Vector3.one;
     }
     public override void Update_Bar()
     {
         base.Update_Bar();
-        hpBar.value = current_hp;
+        hpBar.transform.localScale = new Vector3(current_hp / Max_hp / 1, 1);
     }
     public override void Damaged(float damage)
     {
         base.Damaged(damage);
-        if (current_hp < 0)
+        if(current_hp <=0)
         {
-            monster.Die(); 
-
+            Destroy(hpBar);
+            monster.Die();
+           
         }
     }
 }

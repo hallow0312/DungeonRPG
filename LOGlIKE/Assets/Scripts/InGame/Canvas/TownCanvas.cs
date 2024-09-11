@@ -14,12 +14,15 @@ public class EnvironmentName : MonoBehaviour
         text.gameObject.SetActive(true);
         image.gameObject.SetActive(true);
         Color color = image.color;
+        Color textColor=text.color;
         color.a = 0f;
+        textColor.a = 0;
         while(color.a<1.0f)
         {
             color.a += Time.deltaTime*FadeSpeed;
+            textColor.a += Time.deltaTime*FadeSpeed;
             image.color = color;
-            text.color = color;
+            text.color = textColor;
             yield return null;
         }
         if(color.a>=1.0f)
@@ -32,12 +35,16 @@ public class EnvironmentName : MonoBehaviour
     public IEnumerator FadeOut()
     {
         Color color = image.color;
+        Color textColor= text.color; 
         color.a = 1.0f;
+        textColor.a = 1.0f;
         while(color.a>0)
         {
             color.a-= Time.deltaTime*FadeSpeed;
+            textColor.a-= Time.deltaTime * FadeSpeed;
             image.color = color;
-            text.color = color;
+            text.color = textColor;
+
             yield return null;
         }
         image.gameObject.SetActive(false);

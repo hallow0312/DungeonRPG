@@ -37,10 +37,10 @@ public class PlayerAttack : MonoBehaviour
         yield return CoroutineCache.waitForSeconds(delayTime);
         SoundManager.Instance.Sound(weaponSound);
         animeController.BoolAttackAnimation(false);
-
-        weaponManager.AttackState = false;
         isAttacking = false;
+
     }
+       
     
     
 }

@@ -8,13 +8,12 @@ public class BossController : MonsterController
     private const float range = 4.0f;
     [SerializeField] BoxCollider2D attack;
     [SerializeField]float attackDamage;
-    bool inRange;
+
+    public bool inRange;
     bool isAttacking;
     private float detectionRange = range;
     Vector2 detection;
-   
-
-    
+    IMonsterState attackState = new AttackState();
     protected override void Start()
     {
         attack.gameObject.SetActive(false);
@@ -33,7 +32,8 @@ public class BossController : MonsterController
         else if(inRange&&!isAttacking)
         {
             isAttacking = true;
-            base.moveState = 0;
+            base.TransitionState(attackState);
+            base.detectionMove = 0;
             StartCoroutine(Attacking());
         }
     }
@@ -62,17 +62,15 @@ public class BossController : MonsterController
         }
     }
 
-    
-   
-   IEnumerator Attacking()
+    IEnumerator Attacking()
     {
         attack.gameObject.SetActive(true);
         base.animator.SetTrigger("isAttack");
         yield return CoroutineCache.waitForSeconds(0.42f);
         attack.gameObject.SetActive(false);
         isAttacking = false;
+        base.TransitionState(base.chaseState);
     }
-
 
 
 }

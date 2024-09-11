@@ -41,7 +41,6 @@ public abstract class Monster : MonoBehaviour,ISubject
         var DestroyCollider = this.GetComponent<Collider2D>();
         if(monsterController!=null)
         {
-            monsterController.EndCoroutine();
             monsterController.Die();
         }
         Destroy(DestroyCollider);
