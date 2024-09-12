@@ -12,7 +12,7 @@ public class MonsterController: MonoBehaviour //일반몬스터
     [SerializeField] protected Vector3 scale;
 
     public int detectionMove;
-    protected float direction;
+    public float direction;
     protected bool isTracing;
     protected GameObject traceTarget;
     #endregion
@@ -71,12 +71,14 @@ public class MonsterController: MonoBehaviour //일반몬스터
         direction = moveVelocity.x * movePower * Time.deltaTime;
         Vector2 frontVec = transform.position + new Vector3(direction, 0, 0);
         RaycastHit2D rayHit = Physics2D.Raycast(frontVec, Vector2.down, 3, LayerMask.GetMask("Ground"));
-
-        if (!rayHit.collider)
+        RaycastHit2D rayHit2 = Physics2D.Raycast(transform.position, moveVelocity,0.1f , LayerMask.GetMask("Ground"));
+        if (!rayHit.collider||rayHit2)
         {
-            direction *= -1;
+            detectionMove *= -1;
         }
         Debug.DrawRay(frontVec, Vector2.down*3, new Color(0, 1, 0));
+        Debug.DrawRay(frontVec, moveVelocity*0.1f, new Color(0, 1, 0));
+
         transform.position += new Vector3(direction, 0,0);
     }
     public void TracePlayer()
@@ -99,6 +101,7 @@ public class MonsterController: MonoBehaviour //일반몬스터
         direction = moveVelocity.x * movePower * Time.deltaTime;
         Vector2 frontVec = transform.position + new Vector3(direction, 0, 0);
         RaycastHit2D rayHit = Physics2D.Raycast(frontVec, Vector2.down, 3, LayerMask.GetMask("Ground"));
+       
 
         if (!rayHit.collider)
         {
