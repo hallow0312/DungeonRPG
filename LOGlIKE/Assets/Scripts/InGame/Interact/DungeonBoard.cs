@@ -7,7 +7,8 @@ using UnityEngine.UI;
 public class DungeonBoard : MonoBehaviour,IInteractable
 {
     [SerializeField] bool OnInteract;
-    [SerializeField] GameObject CheckBoard;
+    [SerializeField] CheckBoard checkBoard;
+    
     private void Start()
     {
         OnInteract = false;
@@ -31,9 +32,23 @@ public class DungeonBoard : MonoBehaviour,IInteractable
             
         }
     }
-    public void SelectDungeon()
+    public void SelectForest()
     {
-        CheckBoard.SetActive(true);
+        
+        checkBoard.gameObject.SetActive(true);
+        checkBoard.SetDungeon(3);
+    }
+    public void SelectDesert()
+    {
+        checkBoard.gameObject.SetActive(true);
+        checkBoard.SetDungeon(4);
+
+    }
+    public void SelectTemple()
+    {
+        checkBoard.gameObject.SetActive(true);
+        checkBoard.SetDungeon(5);
+
     }
     public void ExitBoard()
     {

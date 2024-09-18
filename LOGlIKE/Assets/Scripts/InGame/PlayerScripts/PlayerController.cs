@@ -30,13 +30,11 @@ public class PlayerController: MonoBehaviour
         jumpManager=gameObject.GetComponent<JumpManager>();
         playerCollider = gameObject.GetComponent<BoxCollider2D>();
         animeController = gameObject.GetComponent<PlayerAnimationController>();
+        currentOneWayPlatForm = null;
     }
       
       
-        
-      
-
-
+       
     void Update()
     {
        

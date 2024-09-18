@@ -5,10 +5,21 @@ using UnityEngine.SceneManagement;
 
 public class CheckBoard : MonoBehaviour
 {
-    public void DungeonSelect()
+    [SerializeField] int sceneIndex;
+
+
+
+    public void SetDungeon(int index)
     {
-        StartCoroutine(SceneController.Instance.AsyncLoad(3));
+        sceneIndex = index;
     }
+
+      
+    public void EnterDungeon()
+    {
+        StartCoroutine(SceneController.Instance.AsyncLoad(sceneIndex));
+    }
+    
 
     public void Cancel()
     {

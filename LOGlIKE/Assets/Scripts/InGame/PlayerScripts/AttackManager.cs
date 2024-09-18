@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
-    [SerializeField] float delayTime = 0.44f;
+     float delayTime = 0.44f;
     [SerializeField] WeaponManager weaponManager;
     [SerializeField] AudioClip weaponSound;
     private PlayerAnimationController animeController;
@@ -32,11 +32,11 @@ public class PlayerAttack : MonoBehaviour
     private IEnumerator NormalAttack()
     {
      
-        animeController.BoolAttackAnimation(true);
+        animeController.TriggerAttackAnimation();
         weaponManager.AttackState = true;
         yield return CoroutineCache.waitForSeconds(delayTime);
         SoundManager.Instance.Sound(weaponSound);
-        animeController.BoolAttackAnimation(false);
+        
         isAttacking = false;
 
     }

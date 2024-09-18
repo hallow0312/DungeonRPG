@@ -7,7 +7,7 @@ using UnityEngine;
 public class MonsterController: MonoBehaviour //일반몬스터 
 {
     #region public/protected
-    [SerializeField] public Animator animator;
+    public Animator animator;
     [SerializeField] protected float movePower;
     [SerializeField] protected Vector3 scale;
 
@@ -70,7 +70,7 @@ public class MonsterController: MonoBehaviour //일반몬스터
 
         direction = moveVelocity.x * movePower * Time.deltaTime;
         Vector2 frontVec = transform.position + new Vector3(direction, 0, 0);
-        RaycastHit2D rayHit = Physics2D.Raycast(frontVec, Vector2.down, 3, LayerMask.GetMask("Ground"));
+        RaycastHit2D rayHit = Physics2D.Raycast(frontVec, Vector2.down, 6, LayerMask.GetMask("Ground"));
         RaycastHit2D rayHit2 = Physics2D.Raycast(transform.position, moveVelocity,0.1f , LayerMask.GetMask("Ground"));
         if (!rayHit.collider||rayHit2)
         {
@@ -100,7 +100,7 @@ public class MonsterController: MonoBehaviour //일반몬스터
         }
         direction = moveVelocity.x * movePower * Time.deltaTime;
         Vector2 frontVec = transform.position + new Vector3(direction, 0, 0);
-        RaycastHit2D rayHit = Physics2D.Raycast(frontVec, Vector2.down, 3, LayerMask.GetMask("Ground"));
+        RaycastHit2D rayHit = Physics2D.Raycast(frontVec, Vector2.down, 5, LayerMask.GetMask("Ground"));
        
 
         if (!rayHit.collider)

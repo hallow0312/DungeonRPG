@@ -68,6 +68,7 @@ public class ChaseState:IMonsterState
     public void EnterState(MonsterController controller)
     {
         controller.animator.SetBool("isMove", true);
+        controller.TracePlayer();
     }
     public void UpdateState(MonsterController controller)
     {

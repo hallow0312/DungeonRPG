@@ -20,11 +20,12 @@ public class PlayerAnimationController : MonoBehaviour
         animator.SetTrigger("doJumping");
     }
 
-    public  void BoolAttackAnimation( bool isAttack)
+    public  void TriggerAttackAnimation()
     {
-        animator.SetBool("isAttack", isAttack);
+        animator.SetTrigger("isAttack");
+
     }
-  
-   
+
+
 }
    

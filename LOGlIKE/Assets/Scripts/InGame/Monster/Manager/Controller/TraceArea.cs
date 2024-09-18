@@ -18,11 +18,13 @@ public class TraceArea : MonoBehaviour
         tracing = false;
     }
     private void Update()
-    { 
+    {
+        if (contoller == null||!contoller.gameObject.activeSelf) return;
          Detecting();
     }
     public void Detecting()
     {
+        
         Vector2 frontVec;
         if (transform.parent.localScale.x > 0)
         {
@@ -49,10 +51,18 @@ public class TraceArea : MonoBehaviour
         Debug.DrawRay(frontVec, backDirection * TraceRange, Color.blue);
        
         
-        if (rayHit||rayHit2)
+        if (rayHit)
         {
             traceTimer = 0;
+            
             contoller.StartChase(rayHit.collider.gameObject);
+            tracing = true;
+        }
+        else if(rayHit2)
+        {
+            traceTimer = 0;
+
+            contoller.StartChase(rayHit2.collider.gameObject);
             tracing = true;
         }
         else

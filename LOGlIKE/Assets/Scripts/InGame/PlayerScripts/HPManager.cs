@@ -11,6 +11,7 @@ public class HPManager : MonoBehaviour
     [SerializeField] float defaultHP=100.0f;
     [SerializeField] SpriteRenderer[] render;
     [SerializeField] AudioClip audioclip;
+   
     public float MaxHP
     {
         get { return maxHP; }
@@ -50,6 +51,19 @@ public class HPManager : MonoBehaviour
         }
         gameObject.tag = "Player";
         
+    }
+    public void  Heal(float amount) //포션힐
+    {
+        CurrentHP += amount;
+        if(CurrentHP>maxHP)
+        {
+            CurrentHP = MaxHP;
+        }
+    }
+    public void  StatueHeal() // statue 에서 상호작용하면 전체힐 시켜주기위함 
+    {
+        CurrentHP = MaxHP;
+       
     }
 
     public void Damaged(float damage)
