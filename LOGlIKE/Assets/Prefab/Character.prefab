@@ -449,7 +449,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74cc7d266196ac847883dac29bb835be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delayTime: 0.44
   weaponManager: {fileID: 5847975867430326969}
   weaponSound: {fileID: 8300000, guid: e4074dbde6448c245af71ab72aeb82d7, type: 3}
 --- !u!114 &356213304095156216
@@ -1445,7 +1444,7 @@ Transform:
   m_GameObject: {fileID: 7760277152478611959}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12, y: 3, z: -6}
+  m_LocalPosition: {x: -38.99997, y: 2.4399905, z: -6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1958,6 +1957,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 4005053463929039201, guid: ac297761c1bfba141a38226113340c48, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 8eb2ff5d15ad57044863329a435b3394, type: 3}
     - target: {fileID: 4871095636498825959, guid: ac297761c1bfba141a38226113340c48, type: 3}
       propertyPath: m_Name
       value: Head
@@ -1965,6 +1968,18 @@ PrefabInstance:
     - target: {fileID: 4871095636498825959, guid: ac297761c1bfba141a38226113340c48, type: 3}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6127818125051112518, guid: ac297761c1bfba141a38226113340c48, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6127818125051112518, guid: ac297761c1bfba141a38226113340c48, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6127818125051112518, guid: ac297761c1bfba141a38226113340c48, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6127818125051112518, guid: ac297761c1bfba141a38226113340c48, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2006,6 +2021,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7852087533136479653, guid: ac297761c1bfba141a38226113340c48, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d843bdc711e689e49b636a4b8a824c67, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

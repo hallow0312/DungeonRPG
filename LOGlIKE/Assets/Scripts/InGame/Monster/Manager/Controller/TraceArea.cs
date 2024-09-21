@@ -22,6 +22,11 @@ public class TraceArea : MonoBehaviour
         if (contoller == null||!contoller.gameObject.activeSelf) return;
          Detecting();
     }
+    public bool Trace
+    {
+        get { return tracing; }
+        set { tracing = value; }
+    }
     public void Detecting()
     {
         

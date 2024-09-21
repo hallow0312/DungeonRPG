@@ -7,8 +7,9 @@ public class NPCSprite : MonoBehaviour
     [SerializeField] Material normalState;
     [SerializeField] Material highLight;
     [SerializeField] SpriteRenderer spriteRenderer;
+    
 
-    private void Awake()
+    private  void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
@@ -25,7 +26,7 @@ public class NPCSprite : MonoBehaviour
     {
         spriteRenderer.material = highLight;
     }
-    public void MakeNormal()
+    public  void MakeNormal()
     {
         spriteRenderer.material = normalState;
     }

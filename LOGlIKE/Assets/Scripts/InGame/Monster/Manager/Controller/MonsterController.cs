@@ -11,9 +11,10 @@ public class MonsterController: MonoBehaviour //일반몬스터
     [SerializeField] protected float movePower;
     [SerializeField] protected Vector3 scale;
 
+    [SerializeField] public float attackDelay = 1.5f;
     public int detectionMove;
     public float direction;
-    protected bool isTracing;
+    public bool isTracing;
     protected GameObject traceTarget;
     #endregion
 
@@ -83,7 +84,7 @@ public class MonsterController: MonoBehaviour //일반몬스터
     }
     public void TracePlayer()
     {
-        if (traceTarget == null) return;
+        if (traceTarget == null||!isTracing) return;
         Vector3 moveVelocity = Vector3.zero;
         Vector3 playerPos = traceTarget.transform.position;
        
@@ -118,6 +119,7 @@ public class MonsterController: MonoBehaviour //일반몬스터
     }
     public  void  Die()
     {
+        isTracing = false;
         StopAllCoroutines();
         animator.SetTrigger("isDie");
     }
@@ -128,7 +130,7 @@ public class MonsterController: MonoBehaviour //일반몬스터
         isTracing = true;
         TransitionState(chaseState);
     }
-    
+   
     public void EndChase()
     {
         traceTarget = null;
