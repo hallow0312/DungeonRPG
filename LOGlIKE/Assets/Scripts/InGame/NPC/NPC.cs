@@ -34,7 +34,7 @@ public abstract class NPC : MonoBehaviour
         chattingboard.gameObject.SetActive(true);       // 대화 보드 활성화
         buttonObject.SetActive(false);                  // 버튼 비활성화
         isChatting = true;
-      
+
         ChatNPC();                                      // 첫 대화 호출
     }
 
@@ -102,7 +102,11 @@ public abstract class NPC : MonoBehaviour
         isChatting = false;           // 대화 종료
     }
 
-    public virtual void Yes() { } // 버튼
+    public virtual void Yes()
+    {
+        chattingboard.gameObject.SetActive(false); // 채팅보드 끄기 
+        
+    }
 
     public void NO() // 버튼
     {

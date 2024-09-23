@@ -24,7 +24,7 @@ public class NPCController : MonoBehaviour
         isTrigger = false;
         isInteract = false;
         moveBound = new Rect(transform.position.x - 5.0f, transform.position.y, 10.0f, 0);
-        StartCoroutine(ChangeDirection());
+        moveCoroutine = StartCoroutine(ChangeDirection());
         
     }
     

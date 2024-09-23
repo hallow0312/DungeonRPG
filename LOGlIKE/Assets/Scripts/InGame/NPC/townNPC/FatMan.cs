@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class FatMan : NPC
 {
-    GameObject storeBoard;
+   [SerializeField] GameObject storeBoard;
    
     public override void Yes()
     {
-        storeBoard = Instantiate(Resources.Load<GameObject>("EnhanceBoard"));
+        base.Yes();
+        storeBoard.gameObject.SetActive(true);
     }
   
     public override void EndInteract()
